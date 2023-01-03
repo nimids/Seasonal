@@ -7,8 +7,7 @@ import com.yurisuika.seasonal.utils.Season;
 import net.minecraft.server.command.CommandManager;
 import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.server.command.TimeCommand;
-import net.minecraft.text.LiteralText;
-import net.minecraft.text.TranslatableText;
+import net.minecraft.text.Text;
 import net.minecraft.world.World;
 
 import java.util.Locale;
@@ -35,8 +34,8 @@ public class SeasonCommand {
                 .executes(context -> {
                     World world = context.getSource().getWorld();
                     Season season = Seasonal.getCurrentSeason(world);
-                    context.getSource().sendFeedback(new TranslatableText("tooltip.seasonal.calendar_info_1").append(new TranslatableText("tooltip.seasonal."+season.name().toLowerCase(Locale.ROOT))), false);
-                    context.getSource().sendFeedback(new LiteralText(Long.toString(((Seasonal.CONFIG.getSeasonLength() - (world.getTimeOfDay() - ((world.getTimeOfDay()/ Seasonal.CONFIG.getSeasonLength())* Seasonal.CONFIG.getSeasonLength()) )) % Seasonal.CONFIG.getSeasonLength())/24000L)).append(new TranslatableText("tooltip.seasonal.calendar_info_2").append(new TranslatableText("tooltip.seasonal."+season.getNext().name().toLowerCase(Locale.ROOT)))), false);
+                    context.getSource().sendFeedback(Text.translatable("tooltip.seasonal.calendar_info_1").append(Text.translatable("tooltip.seasonal."+season.name().toLowerCase(Locale.ROOT))), false);
+                    context.getSource().sendFeedback(Text.literal(Long.toString(((Seasonal.CONFIG.getSeasonLength() - (world.getTimeOfDay() - ((world.getTimeOfDay()/ Seasonal.CONFIG.getSeasonLength())* Seasonal.CONFIG.getSeasonLength()) )) % Seasonal.CONFIG.getSeasonLength())/24000L)).append(Text.translatable("tooltip.seasonal.calendar_info_2").append(Text.translatable("tooltip.seasonal."+season.getNext().name().toLowerCase(Locale.ROOT)))), false);
                     return season.ordinal();
                 })
             )

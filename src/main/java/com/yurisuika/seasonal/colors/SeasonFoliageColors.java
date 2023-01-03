@@ -19,43 +19,19 @@ public class SeasonFoliageColors {
     private static int[] lateWinterColorMap = new int[65536];
 
     public static void setColorMap(Season season, int[] pixels) {
-        switch (season) {
-            case EARLY_SPRING:
-                earlySpringColorMap = pixels;
-                break;
-            case MID_SPRING:
-                midSpringColorMap = pixels;
-                break;
-            case LATE_SPRING:
-                lateSpringColorMap = pixels;
-                break;
-            case EARLY_SUMMER:
-                earlySummerColorMap = pixels;
-                break;
-            case MID_SUMMER:
-                midSummerColorMap = pixels;
-                break;
-            case LATE_SUMMER:
-                lateSummerColorMap = pixels;
-                break;
-            case EARLY_AUTUMN:
-                earlyAutumnColorMap = pixels;
-                break;
-            case MID_AUTUMN:
-                midAutumnColorMap = pixels;
-                break;
-            case LATE_AUTUMN:
-                lateAutumnColorMap = pixels;
-                break;
-            case EARLY_WINTER:
-                earlyWinterColorMap = pixels;
-                break;
-            case MID_WINTER:
-                midWinterColorMap = pixels;
-                break;
-            case LATE_WINTER:
-                lateWinterColorMap = pixels;
-                break;
+        switch(season){
+            case EARLY_SPRING -> earlySpringColorMap = pixels;
+            case MID_SPRING -> midSpringColorMap = pixels;
+            case LATE_SPRING -> lateSpringColorMap = pixels;
+            case EARLY_SUMMER -> earlySummerColorMap = pixels;
+            case MID_SUMMER -> midSummerColorMap = pixels;
+            case LATE_SUMMER -> lateSummerColorMap = pixels;
+            case EARLY_AUTUMN -> earlyAutumnColorMap = pixels;
+            case MID_AUTUMN -> midAutumnColorMap = pixels;
+            case LATE_AUTUMN -> lateAutumnColorMap = pixels;
+            case EARLY_WINTER -> earlyWinterColorMap = pixels;
+            case MID_WINTER -> midWinterColorMap = pixels;
+            case LATE_WINTER -> lateWinterColorMap = pixels;
         }
     }
 
@@ -63,33 +39,20 @@ public class SeasonFoliageColors {
         humidity *= temperature;
         int i = (int)((1.0D - temperature) * 255.0D);
         int j = (int)((1.0D - humidity) * 255.0D);
-        switch (season) {
-            case EARLY_SPRING:
-                return earlySpringColorMap[j << 8 | i];
-            case MID_SPRING:
-                return midSpringColorMap[j << 8 | i];
-            case LATE_SPRING:
-                return lateSpringColorMap[j << 8 | i];
-            case EARLY_SUMMER:
-                return earlySummerColorMap[j << 8 | i];
-            case MID_SUMMER:
-                return midSummerColorMap[j << 8 | i];
-            case LATE_SUMMER:
-                return lateSummerColorMap[j << 8 | i];
-            case EARLY_AUTUMN:
-                return earlyAutumnColorMap[j << 8 | i];
-            case MID_AUTUMN:
-                return midAutumnColorMap[j << 8 | i];
-            case LATE_AUTUMN:
-                return lateAutumnColorMap[j << 8 | i];
-            case EARLY_WINTER:
-                return earlyWinterColorMap[j << 8 | i];
-            case MID_WINTER:
-                return midWinterColorMap[j << 8 | i];
-            case LATE_WINTER:
-                return lateWinterColorMap[j << 8 | i];
-        }
-        return earlySpringColorMap[j << 8 | i];
+        return switch(season){
+            case EARLY_SPRING -> earlySpringColorMap[j << 8 | i];
+            case MID_SPRING -> midSpringColorMap[j << 8 | i];
+            case LATE_SPRING -> lateSpringColorMap[j << 8 | i];
+            case EARLY_SUMMER -> earlySummerColorMap[j << 8 | i];
+            case MID_SUMMER -> midSummerColorMap[j << 8 | i];
+            case LATE_SUMMER -> lateSummerColorMap[j << 8 | i];
+            case EARLY_AUTUMN -> earlyAutumnColorMap[j << 8 | i];
+            case MID_AUTUMN -> midAutumnColorMap[j << 8 | i];
+            case LATE_AUTUMN -> lateAutumnColorMap[j << 8 | i];
+            case EARLY_WINTER -> earlyWinterColorMap[j << 8 | i];
+            case MID_WINTER -> midWinterColorMap[j << 8 | i];
+            case LATE_WINTER -> lateWinterColorMap[j << 8 | i];
+        };
     }
 
     public static int getSpruceColor(Season season) {

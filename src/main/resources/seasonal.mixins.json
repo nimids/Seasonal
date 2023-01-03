@@ -9,7 +9,6 @@
     "BlocksMixin",
     "FertilizableMixin",
     "ItemsMixin",
-    "WeatherAccessor",
     "WorldViewMixin"
   ],
   "client": [

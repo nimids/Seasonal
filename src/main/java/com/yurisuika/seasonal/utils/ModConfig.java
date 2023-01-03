@@ -2,7 +2,7 @@ package com.yurisuika.seasonal.utils;
 
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.registry.RegistryKey;
+import net.minecraft.registry.RegistryKey;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 
@@ -323,7 +323,7 @@ public class ModConfig {
 
     public HardcodedColors getMinecraftDefaultFoliage() {
         FabricLoader loader = FabricLoader.getInstance();
-        if (loader.isModLoaded("catherine") == true) {
+        if (loader.isModLoaded("catherine")) {
             return isabellaDefaultFoliage;
         }
         else {
@@ -333,7 +333,7 @@ public class ModConfig {
 
     public HardcodedColors getMinecraftSpruceFoliage() {
         FabricLoader loader = FabricLoader.getInstance();
-        if (loader.isModLoaded("catherine") == true) {
+        if (loader.isModLoaded("catherine")) {
             return isabellaSpruceFoliage;
         }
         else {
@@ -343,7 +343,7 @@ public class ModConfig {
 
     public HardcodedColors getMinecraftBirchFoliage() {
         FabricLoader loader = FabricLoader.getInstance();
-        if (loader.isModLoaded("catherine") == true) {
+        if (loader.isModLoaded("catherine")) {
             return isabellaBirchFoliage;
         }
         else {
@@ -353,7 +353,7 @@ public class ModConfig {
 
     public HardcodedColors getMinecraftSwampGrass1() {
         FabricLoader loader = FabricLoader.getInstance();
-        if (loader.isModLoaded("catherine") == true) {
+        if (loader.isModLoaded("catherine")) {
             return isabellaSwampGrass1;
         }
         else {
@@ -363,7 +363,7 @@ public class ModConfig {
 
     public HardcodedColors getMinecraftSwampGrass2() {
         FabricLoader loader = FabricLoader.getInstance();
-        if (loader.isModLoaded("catherine") == true) {
+        if (loader.isModLoaded("catherine")) {
             return isabellaSwampGrass2;
         }
         else {
@@ -373,7 +373,7 @@ public class ModConfig {
 
     public HardcodedColors getMinecraftBadlandsGrass() {
         FabricLoader loader = FabricLoader.getInstance();
-        if (loader.isModLoaded("catherine") == true) {
+        if (loader.isModLoaded("catherine")) {
             return isabellaBadlandsGrass;
         }
         else {
@@ -383,7 +383,7 @@ public class ModConfig {
 
     public HardcodedColors getMinecraftBadlandsFoliage() {
         FabricLoader loader = FabricLoader.getInstance();
-        if (loader.isModLoaded("catherine") == true) {
+        if (loader.isModLoaded("catherine")) {
             return isabellaBadlandsFoliage;
         }
         else {

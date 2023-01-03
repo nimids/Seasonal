@@ -1,8 +1,8 @@
 package com.yurisuika.seasonal.mixin;
 
 import com.yurisuika.seasonal.Seasonal;
+import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.registry.RegistryEntry;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldView;
 import net.minecraft.world.biome.Biome;
@@ -19,8 +19,8 @@ public interface WorldViewMixin {
     /**
      * @author D4rkness_King
      * @reason I need to change how all the biomes are perceived by Minecraft,
-     *   without actually changing the original values so that i dont screw up
-     *   world generation. Upon extensive testing, i found out that this works.
+     *   without actually changing the original values so that I don't screw up
+     *   world generation. Upon extensive testing, I found out that this works.
      */
     @Overwrite
     default RegistryEntry<Biome> getBiome(BlockPos pos) {

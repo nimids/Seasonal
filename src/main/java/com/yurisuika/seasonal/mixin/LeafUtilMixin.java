@@ -3,6 +3,7 @@ package com.yurisuika.seasonal.mixin;
 import com.yurisuika.seasonal.Seasonal;
 import com.yurisuika.seasonal.utils.Season;
 import net.fabricmc.loader.api.FabricLoader;
+import net.minecraft.block.BlockState;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -16,7 +17,7 @@ import static randommcsomethin.fallingleaves.init.Config.CONFIG;
 public class LeafUtilMixin {
 
     @Inject(method = "getModifiedSpawnChance", at = @At("RETURN"))
-    private static void injectSpawnChance(LeafSettingsEntry leafSettings, CallbackInfoReturnable<Double> cir) {
+    private static void injectSpawnChance(BlockState state, LeafSettingsEntry leafSettings, CallbackInfoReturnable<Double> cir) {
         double spawnChance = leafSettings.getSpawnChance();
 
         if (FabricLoader.getInstance().isModLoaded("seasonal")) {
